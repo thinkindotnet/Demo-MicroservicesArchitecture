@@ -1,0 +1,55 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7278"
+  },
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/categories",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7232
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/categories",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "SwaggerKey": "categories"
+    },
+    {
+      "DownstreamPathTemplate": "/api/product",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7124
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/product",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      "SwaggerKey": "product"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "categories",
+      "Config": [
+        {
+          "Name": "Categories API",
+          "Version": "v1",
+          "Url": "https://localhost:7232/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "product",
+      "Config": [
+        {
+          "Name": "Products API",
+          "Version": "v1",
+          "Url": "https://localhost:7124/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}

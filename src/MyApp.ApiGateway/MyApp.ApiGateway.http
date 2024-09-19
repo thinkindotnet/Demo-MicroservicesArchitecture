@@ -1,0 +1,30 @@
+@MyApp.ApiGateway_HostAddress = https://localhost:7278
+
+###
+
+GET {{MyApp.ApiGateway_HostAddress}}/gateway/product
+Accept: application/json
+
+
+###
+
+GET {{MyApp.ApiGateway_HostAddress}}/gateway/categories
+Accept: application/json
+
+
+###
+
+POST {{MyApp.ApiGateway_HostAddress}}/gateway/categories
+Content-Type: application/json
+Accept: application/json
+
+{
+    "categoryName": "New Category"
+}
+
+
+###
+
+DELETE {{MyApp.ApiGateway_HostAddress}}/gateway/categories/2
+
+
